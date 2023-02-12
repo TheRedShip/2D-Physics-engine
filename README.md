@@ -50,7 +50,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-spring-pendulum.png" width="800">
 </p>
 
-##Installation
+## Installation
 To install the physics engine, it is recommended to clone this repository and serve the index.html file through a server service, such as Node.js or by utilizing the built-in server feature in Visual Studio Code.
 
 ## Examples
