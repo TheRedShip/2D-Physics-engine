@@ -12,7 +12,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 * **[Summary](#summary)**
 * **[Features](#features)**
 * **[Installation](#installation)**
-* **[Examples](#tests)**
+* **[Examples](#Examples)**
     * [Multiple collision in a bottle](#multiple-collision-in-a-bottle)
     * [Double pendulum experiment](#double-pendulum-experiment)
     * [Newton's gravity implementation](#newton's-gravity-implementation)
