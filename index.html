@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas test</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <canvas></canvas>
+    
+    <div id="control">
+        <p id="control-name"></p>
+        <label id="gravity" class="switch">
+            <input id="checkgrav" type="checkbox">
+            <div><span>Gravity</span></div>
+        </label>
+
+        <label id="friction" class="switch">
+            <input id="checkfric" type="checkbox">
+            <div><span>Friction</span></div>
+        </label>
+
+        <label id="static" class="switch">
+            <input id="checkstatic" type="checkbox">
+            <div><span>Static</span></div>
+        </label>
+
+        <label id="trajectory" class="switch">
+            <input id="checktrajectory" type="checkbox">
+            <div><span>Trajectory</span></div>
+        </label>
+
+        <span class="velocite" id="VX">VX : </span>
+        <span class="velocite" id="VY">VY : </span>
+
+    </div>
+    <div id="panel">
+        <div class="item">
+            <img src="images/control.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <div class="itemConfig">
+                <div class="subItemConfig">
+                    <img src="images/property.png" width="100%">
+                </div>
+                
+                <div class="subItemConfig">
+                    <img src="images/property/locked.png" width="100%">
+                </div>
+
+                <div class="subItemConfig">
+
+                </div>
+            </div>
+            <img src="images/property.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <div class="itemConfig">
+                <div class="subItemConfig">
+                    <img src="images/attraction.png" width="100%">
+                </div>
+                
+                <div class="subItemConfig">
+                    <img src="images/attraction/orbital.png" width="100%">
+                </div>
+
+                <div class="subItemConfig">
+
+                </div>
+                
+            </div>
+            <img src="images/attraction.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <img src="images/move.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <img src="images/vecteur.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <div class="itemConfig">
+                <div class="subItemConfig">
+                    <img src="images/copy.png" width="100%">
+                </div>
+                <div class="subItemConfig">
+                    <img src="images/copy/copySub2.png" width="100%">
+                </div>
+                <div class="subItemConfig">
+                    <img src="images/copy/copySub3.png" width="100%">
+                </div>
+            </div>
+            <img src="images/copy.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <img src="images/circle.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <div class="itemConfig">
+                
+                <div class="subItemConfig">
+                    <img src="images/wall.png" width="100%">
+                </div>
+
+                <div class="subItemConfig">
+                    <img src="images/wall/wall.png" width="100%">
+                </div>
+
+                <div class="subItemConfig">
+
+                </div>
+            </div>
+            <img src="images/wall.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <img src="images/contraints.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item">
+            <img src="images/chrono.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+
+        <div class="item">
+            <img src="images/trash.png" width="75%" style="position:absolute;left:10%;top:10%">
+        </div>
+        <div class="item"></div>
+    </div>
+
+    <script type="module" src="canvas.js"></script>
+    <script type="module" src="uiScript.js"></script>
+</body>
+</html>
