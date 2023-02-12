@@ -58,6 +58,8 @@ To install the physics engine, it is recommended to clone this repository and se
 
 ## Examples
 
+To showcase the capabilities of the physics engine, here is some examples:
+
 ### Multiple collision in a bottle
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/collision-in-a-bottle.png" width="800">
