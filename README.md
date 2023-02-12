@@ -13,7 +13,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 * **[Features](#features)**
 * **[Installation](#installation)**
 * **[Examples](#Examples)**
-    * [Multiple collision in a bottle](#multiple-collision-in-a-bottle)
+    * [Multiple collision in a bottle scenario](#multiple-collision-in-a-bottle-scenario)
     * [Double pendulum experiment](#double-pendulum-experiment)
     * [Newton's gravity implementation](#newton's-gravity-implementation)
     * [Gravity prediction](#gravity-prediction)
@@ -60,7 +60,7 @@ To install the physics engine, it is recommended to clone this repository and se
 
 To showcase the capabilities of the physics engine, here is some examples:
 
-### Multiple collision in a bottle
+### Multiple collision in a bottle scenario
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/collision-in-a-bottle.png" width="800">
 </p>
