@@ -70,3 +70,12 @@ To install the physics engine, it is recommended to clone this repository and se
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/newton-gravity-implementation.png" width="800">
 </p>
 
+### Gravity prediction
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-prediction.png" width="800">
+</p>
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-prediction-2.png" width="800">
+</p>
+
+
