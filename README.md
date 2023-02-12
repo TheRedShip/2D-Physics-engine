@@ -40,7 +40,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 </p>
 
 - Can copy objects, ball and walls.
-- Ground gravity and object's attraction.
+- Realistic simulation of gravitation and object's attraction.
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-attraction.png" width="800">
 </p>
