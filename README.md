@@ -3,6 +3,7 @@
 
 This repository comprises the source code for a 2D physics engine implemented in JavaScript, entirely from scratch without reliance on any external physics libraries. The engine is capable of simulating ball collisions, gravitation and other things, adhering to real-world physical laws such as the law of conservation of energy.
 
+⚠️Please be advised that this project is still in its beta phase and may still experience bugs and glitches.⚠️
 
 ## Summary
 
