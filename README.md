@@ -83,5 +83,8 @@ To install the physics engine, it is recommended to clone this repository and se
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/all-at-the-same-time.png" width="800">
 </p>
 
+# Credits
+
+* [**Contré Yavin**](https://github.com/TheRedShip) : Creator of the project.
 
 
