@@ -49,3 +49,21 @@ This repository comprises the source code for a 2D physics engine implemented in
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-spring-pendulum.png" width="800">
 </p>
+
+## Examples
+
+### Multiple collision in a bottle
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/collision-in-a-bottle.png" width="800">
+</p>
+
+### Double pendulum experiment
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/double-pendulum-experiment.png" width="800">
+</p>
+
+### Newton's gravity implementation
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/newton-gravity-implementation.png" width="800">
+</p>
+
