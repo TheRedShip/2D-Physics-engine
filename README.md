@@ -17,7 +17,7 @@ This repository comprises the source code for a 2D physics engine implemented in
     * [Double pendulum experiment](#double-pendulum-experiment)
     * [Newton's gravity implementation](#newton's-gravity-implementation)
     * [Gravity prediction](#gravity-prediction)
-    * [All at the same time](#all-at-the-same-time)
+    * [All features working simultaneously](#all-features-working-simultaneously)
 * **[Credits](#credits)**
 ## Features
 
@@ -83,7 +83,7 @@ To showcase the capabilities of the physics engine, here is some examples:
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-prediction-2.png" width="800">
 </p>
 
-### All at the same time
+### All features working simultaneously
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/all-at-the-same-time.png" width="800">
 </p>
