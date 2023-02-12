@@ -27,6 +27,8 @@ This repository comprises the source code for a 2D physics engine implemented in
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-collision.png" width="800">
 </p>
 
+- Ability to simulate multiple objects with varying mass and velocity 
+
 - The engine provides control over the friction and gravity of each individual object.
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-control.png" width="800">
