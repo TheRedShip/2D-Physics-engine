@@ -1,3 +1,4 @@
+
 # 2D-Physics-engine
 
 This repository comprises the source code for a 2D physics engine implemented in JavaScript, entirely from scratch without reliance on any external physics libraries. The engine is capable of simulating ball collisions, gravitation and other things, adhering to real-world physical laws such as the law of conservation of energy.
@@ -15,7 +16,6 @@ This repository comprises the source code for a 2D physics engine implemented in
     * [Gravity prediction](#gravity-prediction)
     * [All at the same time](#all-at-the-same-time)
 * **[Credits](#credits)**
-
 ## Features
 
 - More than a hundred ball collision in real time.
@@ -36,5 +36,16 @@ This repository comprises the source code for a 2D physics engine implemented in
 
 - Can copy objects, ball and walls.
 - Ground gravity and object's attraction.
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-attraction.png" width="800">
+</p>
+
 - Perfectly circular orbit around any object.
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-circular-orbit.png" width="800">
+</p>
+
 - Integration of springs.
+<p align="center">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-spring-pendulum.png" width="800">
+</p>
