@@ -21,17 +21,17 @@ This repository comprises the source code for a 2D physics engine implemented in
 - More than a hundred ball collision in real time.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/07d3ddea6b9b1f6e9b6e627cfe1861e26eb2194b/ressources/ball-collision.png" width="500">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-collision.png" width="900">
 </p>
 
 - The engine provides control over the friction and gravity of each individual object.
 <p align="center">
-	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/07d3ddea6b9b1f6e9b6e627cfe1861e26eb2194b/ressources/ball-control.png" width="500">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-control.png" width="900">
 </p>
 
 - Creating walls and curves.
 <p align="center">
-	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/07d3ddea6b9b1f6e9b6e627cfe1861e26eb2194b/ressources/wall-and-curves.png" width="500">
+	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/wall-and-curves.png" width="900">
 </p>
 
 - Can copy objects, ball and walls.
