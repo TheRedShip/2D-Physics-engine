@@ -50,7 +50,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-circular-orbit.png" width="800">
 </p>
 
-- Integration of springs.
+- Integration of springs in order to constraints movements.
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-spring-pendulum.png" width="800">
 </p>
