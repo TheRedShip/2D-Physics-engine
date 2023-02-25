@@ -53,16 +53,18 @@ class Circle {
         //     if (this.contraint) this.vx *= 0.60
         //     if (this.friction) this.vx *= ballConstant.collisionFriction
         // }
-        const originalPointBorder = new DOMPoint(0,screeny);
-        let screenBorderPos = c.getTransform().invertSelf().transformPoint(originalPointBorder)
-        
-
-        if (this.y + this.vy + this.r >= screenBorderPos.y) {
-            this.y = screenBorderPos.y - this.r;
-            this.vy *= -1
-
-            if (this.contraint) this.vy *= 0.60
-            if (this.friction) this.vy *= ballConstant.collisionFriction
+        if(this.gravity != 0){
+            const originalPointBorder = new DOMPoint(0,screeny);
+            let screenBorderPos = c.getTransform().invertSelf().transformPoint(originalPointBorder)
+            
+    
+            if (this.y + this.vy + this.r >= screenBorderPos.y) {
+                this.y = screenBorderPos.y - this.r;
+                this.vy *= -1
+    
+                if (this.contraint) this.vy *= 0.60
+                if (this.friction) this.vy *= ballConstant.collisionFriction
+            }
         }
     }
     getAttractForce(other) {
