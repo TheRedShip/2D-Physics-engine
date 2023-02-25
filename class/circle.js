@@ -53,7 +53,7 @@ class Circle {
         //     if (this.contraint) this.vx *= 0.60
         //     if (this.friction) this.vx *= ballConstant.collisionFriction
         // }
-        if(this.gravity != 0){
+        if( this.gravity != 0 ){
             const originalPointBorder = new DOMPoint(0,screeny);
             let screenBorderPos = c.getTransform().invertSelf().transformPoint(originalPointBorder)
             
