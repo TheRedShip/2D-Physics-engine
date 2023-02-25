@@ -14,11 +14,11 @@ function moveLoop(obj, mousepos){
 }
 
 function moveSecondClick(obj,mousepos){
-    let dist = {x:mousepos.x-mousepos.prevx,y:mousepos.y-mousepos.prevy}
-    if(obj.physics && !obj.static && (Math.abs(dist.x) > 3 || Math.abs(dist.y) > 3)){
-        obj.vx += dist.x/2
-        obj.vy += dist.y/2
-    }
+//     let dist = {x:mousepos.x-mousepos.prevx,y:mousepos.y-mousepos.prevy}
+//     if(obj.physics && !obj.static && (Math.abs(dist.x) > 3 || Math.abs(dist.y) > 3)){
+//         obj.vx += dist.x/2
+//         obj.vy += dist.y/2
+//     }
     
 }
 
