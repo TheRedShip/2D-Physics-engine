@@ -24,6 +24,11 @@ canvas.height = window.innerHeight
 
 var c = canvas.getContext("2d");
 
+canvas.addEventListener('contextmenu', (ev)=>{
+    ev.preventDefault(); 
+});
+
+
 let mousepos = {x:0,y:0, prevx:0, prevy:0,realx:0,realy:0}
 let handleMousemove = (event) => {
     mousepos.prevx = mousepos.x
