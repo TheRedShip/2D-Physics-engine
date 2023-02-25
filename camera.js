@@ -1,6 +1,3 @@
-import { SelectNums,Colors } from "./constant.js"
-import { selected } from "./uiScript.js"
-
 let canvas = document.querySelector("canvas")
 let c = canvas.getContext("2d")
 
@@ -19,8 +16,12 @@ function resetCanvas() {
 }
 
 function onMouseDown(event) {
-	isDragging = true;
-	dragStartPosition = getTransformedPoint(event.offsetX, event.offsetY);
+    event.preventDefault();
+
+    if(event.buttons==2){
+        isDragging = true;
+        dragStartPosition = getTransformedPoint(event.offsetX, event.offsetY);
+    }
 }
 
 function getTransformedPoint(x, y) {
@@ -32,7 +33,7 @@ function onMouseMove(event) {
     currentTransformedCursor = getTransformedPoint(event.offsetX, event.offsetY)
     resetCanvas();
     
-    if (isDragging && selected == SelectNums.controlSelect) {
+    if (isDragging) {
 
         c.translate(currentTransformedCursor.x - dragStartPosition.x, currentTransformedCursor.y - dragStartPosition.y);
         resetCanvas();
