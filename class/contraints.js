@@ -5,6 +5,9 @@ class Contraints {
     constructor(obj1,obj2,length){
         this.startObj = obj1
         this.endObj = obj2
+        
+        this.r = 0
+
 
         this.x = this.startObj.x
         this.y = this.startObj.y
