@@ -60,7 +60,7 @@ This repository includes the source code for a 2D physics engine implemented in 
 ## Installation
 
 1. Clone this repository
-2. Serve the index.html file through a **server service**, such as Node.js or by utilizing the built-in server feature in Visual Studio Code.
+2. Serve the index.html file through a **server service**, such as express,flask or by utilizing the built-in server feature in Visual Studio Code.
 
 ## Examples
 
