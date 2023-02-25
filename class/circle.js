@@ -43,24 +43,24 @@ class Circle {
         this.trajectory = obj.trajectory
     }
     checkBorder(screenx, screeny) {
-        if (this.x + this.vx - this.r <= 0 || this.x + this.vx + this.r >= screenx) {
-            if (this.x + this.vx + this.r >= screenx) this.x = screenx - this.r;
-            if (this.x + this.vx - this.r <= 0) this.x = 0 + this.r;
+        // if (this.x + this.vx - this.r <= 0 || this.x + this.vx + this.r >= screenx) {
+        //     if (this.x + this.vx + this.r >= screenx) this.x = screenx - this.r;
+        //     if (this.x + this.vx - this.r <= 0) this.x = 0 + this.r;
 
-            this.vx *= -1
+        //     this.vx *= -1
 
-            if (this.contraint) this.vx *= 0.60
-            if (this.friction) this.vx *= ballConstant.collisionFriction
-        }
-        if (this.y + this.vy - this.r <= 0 || this.y + this.vy + this.r >= screeny) {
-            if (this.y + this.vy + this.r >= screeny) this.y = screeny - this.r;
-            if (this.y + this.vy - this.r <= 0) this.y = 0 + this.r;
+        //     if (this.contraint) this.vx *= 0.60
+        //     if (this.friction) this.vx *= ballConstant.collisionFriction
+        // }
+        // if (this.y + this.vy - this.r <= 0 || this.y + this.vy + this.r >= screeny) {
+        //     if (this.y + this.vy + this.r >= screeny) this.y = screeny - this.r;
+        //     if (this.y + this.vy - this.r <= 0) this.y = 0 + this.r;
 
-            this.vy *= -1
+        //     this.vy *= -1
 
-            if (this.contraint) this.vy *= 0.60
-            if (this.friction) this.vy *= ballConstant.collisionFriction
-        }
+        //     if (this.contraint) this.vy *= 0.60
+        //     if (this.friction) this.vy *= ballConstant.collisionFriction
+        // }
     }
     getAttractForce(other) {
         let r = dist(this.x, other.x, this.y, other.y)
@@ -68,7 +68,7 @@ class Circle {
         let fMag = Math.sqrt(f.x ** 2 + f.y ** 2)
 
         let newMag = (G * this.m * other.m) / (r * r)
-
+        console.log(newMag)
         let new_f = { x: f.x * (newMag / fMag), y: f.y * (newMag / fMag) }
         return { x: new_f.x / other.m, y: new_f.y / other.m }
     }
@@ -129,8 +129,11 @@ function dist(x1, x2, y1, y2) {
     return ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)) ** .5
 }
 function ccCollision(obj1, obj2) {
-    if (dist(obj1.x, obj2.x, obj1.y, obj2.y) < obj1.r + obj2.r) {
-        ccPenRes(obj1, obj2)
+    let dist = { x: obj1.x - obj2.x, y: obj1.y - obj2.y }
+    let distMag = Math.sqrt(dist.x ** 2 + dist.y ** 2)
+    if (distMag < obj1.r + obj2.r) {
+        ccPenRes(obj1, obj2,dist,distMag)
+
         let vCollision = { x: obj2.x - obj1.x, y: obj2.y - obj1.y };
         let distance = Math.sqrt((obj2.x - obj1.x) ** 2 + (obj2.y - obj1.y) ** 2);
         let vCollisionNorm = { x: vCollision.x / distance, y: vCollision.y / distance }; //dir normal
@@ -157,9 +160,7 @@ function ccCollision(obj1, obj2) {
     }
 }
 
-function ccPenRes(obj1, obj2) {
-    let dist = { x: obj1.x - obj2.x, y: obj1.y - obj2.y }
-    let distMag = Math.sqrt(dist.x ** 2 + dist.y ** 2)
+function ccPenRes(obj1, obj2,dist,distMag) {
     let pen_depth = obj1.r + obj2.r - distMag
 
     let pen_res;
