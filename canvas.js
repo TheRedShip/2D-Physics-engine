@@ -15,6 +15,7 @@ import * as attraction from "./outils/attraction.js";
 import * as chrono from "./outils/chrono.js";
 import * as trash from "./outils/trash.js";
 import { SelectNums, Colors,particleConstant } from "./constant.js"
+import { currentTransformedCursor } from "./camera.js"
 
 let canvas = document.querySelector("canvas")
 
@@ -23,12 +24,16 @@ canvas.height = window.innerHeight
 
 var c = canvas.getContext("2d");
 
-let mousepos = {x:0,y:0, prevx:0, prevy:0}
+let mousepos = {x:0,y:0, prevx:0, prevy:0,realx:0,realy:0}
 let handleMousemove = (event) => {
     mousepos.prevx = mousepos.x
     mousepos.prevy = mousepos.y
-    mousepos.x = event.clientX
-    mousepos.y = event.clientY
+
+    mousepos.realx=event.clientX
+    mousepos.realy=event.clientY
+
+    mousepos.x = currentTransformedCursor.x
+    mousepos.y = currentTransformedCursor.y
 };
 document.addEventListener('mousemove', handleMousemove);
 
@@ -85,10 +90,11 @@ let particles = []
 let currentBuild = {oldPos:{x:0,y:0}, obj:-1}
 
 function animate(){
-    requestAnimationFrame(animate);
+    c.save();
+    c.setTransform(1,0,0,1,0,0);
     c.fillStyle = Colors.bgColor
-    c.fillRect(0,0, window.innerWidth, window.innerHeight)
-
+    c.fillRect(-window.innerWidth*2,-window.innerHeight*2,window.innerWidth*4, window.innerHeight*4)
+    c.restore();
 
     for(let o = 0; o < particles.length; o++){
         particles[o].update(c)
@@ -106,7 +112,7 @@ function animate(){
     if (mouseClick){
         mouseClick = false
 
-        if( (mousepos.x > window.innerWidth/30) && selected != -1){
+        if( (mousepos.realx > window.innerWidth/30) && selected != -1){
 
             for(let i = 0; i < 50; i ++){
                 particles.push(new Particle(mousepos.x,mousepos.y,10*(Math.random()-0.5),10*(Math.random()-0.5),0,particleConstant.dampening,particleConstant.size,particleConstant.lifetime,particleConstant.color,true))
@@ -186,6 +192,7 @@ function animate(){
     }
 
     handleCollision(objects)
+    requestAnimationFrame(animate);
 }
 
 animate()
