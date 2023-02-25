@@ -1,11 +1,11 @@
 
 # 2D-Physics-engine
 
-This repository comprises the source code for a 2D physics engine implemented in JavaScript, entirely from scratch without reliance on any external physics libraries. The engine is capable of simulating ball collisions, gravitation and other things, adhering to real-world physical laws such as the law of conservation of energy.
+This repository includes the source code for a 2D physics engine implemented in JavaScript, entirely from scratch without reliance on any external physics libraries. The engine is capable of simulating ball collisions, gravitation and other things, adhering to real-world physical laws such as the law of conservation of energy.
 
 <br/>
 
-⚠️Please be advised that this project is still in its beta phase and may still experience bugs and glitches.⚠️
+⚠️Please be advised that this project is still in it's beta phase and may still experience bugs and glitches.⚠️
 
 ## Summary
 
@@ -21,7 +21,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 * **[Credits](#credits)**
 ## Features
 
-- More than a hundred ball collision in real time.
+- More than a hundred ball collisions in real time.
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-collision.png" width="800">
@@ -54,6 +54,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-spring-pendulum.png" width="800">
 </p>
+- Allow to zoom out and zoom in, and move the camera with right click.
 
 ## Installation
 
@@ -64,7 +65,7 @@ This repository comprises the source code for a 2D physics engine implemented in
 
 To showcase the capabilities of the physics engine, here is some examples:
 
-### Multiple collision in a bottle scenario
+### Multiple collisions in a bottle scenario
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/collision-in-a-bottle.png" width="800">
 </p>
