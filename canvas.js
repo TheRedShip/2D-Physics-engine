@@ -14,7 +14,7 @@ import * as property from "./outils/property.js";
 import * as attraction from "./outils/attraction.js";
 import * as chrono from "./outils/chrono.js";
 import * as trash from "./outils/trash.js";
-import { SelectNums, Colors,particleConstant } from "./constant.js"
+import { SelectNums,particleConstant,Colors } from "./constant.js"
 import { currentTransformedCursor } from "./camera.js"
 
 let canvas = document.querySelector("canvas")
@@ -25,9 +25,8 @@ canvas.height = window.innerHeight
 var c = canvas.getContext("2d");
 
 canvas.addEventListener('contextmenu', (ev)=>{
-    ev.preventDefault(); 
+    ev.preventDefault(); // this will prevent browser default behavior 
 });
-
 
 let mousepos = {x:0,y:0, prevx:0, prevy:0,realx:0,realy:0}
 let handleMousemove = (event) => {
@@ -50,6 +49,7 @@ let handleMouseclick = (event) => {
 };
 document.addEventListener('mousedown', handleMouseclick);
 document.addEventListener('mouseup', handleMouseclick);
+
 
 function handleCollision(objects){
     for(let o = 0; o < objects.length; o++){
@@ -117,7 +117,7 @@ function animate(){
     if (mouseClick){
         mouseClick = false
 
-        if( (mousepos.realx > window.innerWidth/30) && selected != -1){
+        if((mousepos.realx > window.innerWidth/30) && selected != -1){
 
             for(let i = 0; i < 50; i ++){
                 particles.push(new Particle(mousepos.x,mousepos.y,10*(Math.random()-0.5),10*(Math.random()-0.5),0,particleConstant.dampening,particleConstant.size,particleConstant.lifetime,particleConstant.color,true))
@@ -198,6 +198,7 @@ function animate(){
 
     handleCollision(objects)
     requestAnimationFrame(animate);
+
 }
 
 animate()
