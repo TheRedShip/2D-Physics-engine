@@ -54,6 +54,7 @@ This repository includes the source code for a 2D physics engine implemented in 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/TheRedShip/2D-Physics-engine/main/ressources/ball-spring-pendulum.png" width="800">
 </p>
+
 - Allow to zoom out and zoom in, and move the camera with right click.
 
 ## Installation
