@@ -25,7 +25,7 @@ canvas.height = window.innerHeight
 var c = canvas.getContext("2d");
 
 canvas.addEventListener('contextmenu', (ev)=>{
-    ev.preventDefault(); // this will prevent browser default behavior 
+    ev.preventDefault();
 });
 
 let mousepos = {x:0,y:0, prevx:0, prevy:0,realx:0,realy:0}
@@ -108,7 +108,7 @@ function animate(){
         }
     }
     for(let o = 0; o < objects.length; o++){
-        objects[o].update(c, canvas.width, canvas.height)
+        objects[o].update(c, canvas.height)
     }
 
     if(currentBuild.oldPos.x==0) currentBuild.obj = getClickedObj(mousepos,objects)
