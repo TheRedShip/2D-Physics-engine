@@ -8,7 +8,10 @@ class Wall {
         this.y = y
         this.x2 = x2
         this.y2 = y2
+        
+        this.r = 0
 
+        
         this.attachedTo = null;
         this.attachedBy = null;
 
