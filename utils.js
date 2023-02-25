@@ -57,7 +57,7 @@ function getClickedObj(mousepos,objects){
     let distWithLastObj = 1000000
     for(let o = 0; o < objects.length; o++){
         let dist = objects[o].distFunc(mousepos)
-        if(dist && dist < distWithLastObj && dist < 200){
+        if(dist && dist < distWithLastObj && dist < 200+objects[o].r){
             distWithLastObj = dist
             obj = objects[o]
         }
