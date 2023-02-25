@@ -42,7 +42,7 @@ class Circle {
         this.attraction = obj.attraction
         this.trajectory = obj.trajectory
     }
-    checkBorder(screenx, screeny) {
+    checkBorder(c, screeny) {
         // if (this.x + this.vx - this.r <= 0 || this.x + this.vx + this.r >= screenx) {
         //     if (this.x + this.vx + this.r >= screenx) this.x = screenx - this.r;
         //     if (this.x + this.vx - this.r <= 0) this.x = 0 + this.r;
