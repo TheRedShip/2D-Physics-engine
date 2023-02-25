@@ -6,14 +6,6 @@ let isDragging = false;
 let dragStartPosition = { x: 0, y: 0 };
 export let currentTransformedCursor;
 
-function resetCanvas() {
-	// c.save();
-    // c.setTransform(1,0,0,1,0,0);
-    // c.fillStyle = Colors.bgColor
-    // c.fillRect(-window.innerWidth*30,-window.innerHeight*30,window.innerWidth*60, window.innerHeight*60)
-    // c.restore();
-}
-
 function onMouseDown(event) {
     event.preventDefault();
     if(event.buttons==2){
@@ -30,13 +22,9 @@ function getTransformedPoint(x, y) {
 
 function onMouseMove(event) {
     currentTransformedCursor = getTransformedPoint(event.offsetX, event.offsetY)
-    resetCanvas();
     
     if (isDragging) {
-
         c.translate(currentTransformedCursor.x - dragStartPosition.x, currentTransformedCursor.y - dragStartPosition.y);
-        resetCanvas();
-            
     }
 }
 
@@ -56,7 +44,6 @@ function onWheel(event) {
     c.scale(zoom, zoom);
     c.translate(-currentTransformedCursor.x, -currentTransformedCursor.y);
       
-    resetCanvas();
     event.preventDefault();
 }
 
