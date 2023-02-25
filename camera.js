@@ -8,7 +8,9 @@ export let currentTransformedCursor;
 
 function onMouseDown(event) {
     event.preventDefault();
+	console.log(event)
     if(event.buttons==2){
+	    
         isDragging = true;
         dragStartPosition = getTransformedPoint(event.offsetX, event.offsetY);
     }
