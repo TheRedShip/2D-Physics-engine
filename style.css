@@ -9,6 +9,17 @@ canvas {
 }
 html, body {height: 100%; overflow: hidden}
 
+@-ms-viewport{
+    width: device-width;
+}
+@media screen and (max-width:400px) {
+    @-ms-viewport{
+        width:320px;
+    }
+}
+
+
+
 
 #gravity {
     top:8.8vh;
@@ -152,6 +163,8 @@ html, body {height: 100%; overflow: hidden}
     position:absolute;
 
     top:-2px;
+    top:-0.3vh;
+
     left:-0.8vw;
 
     width:3vw;
@@ -159,15 +172,67 @@ html, body {height: 100%; overflow: hidden}
 
     background: rgb(52, 58, 64);
     border:solid rgb(33, 37, 41);
-    border-radius: 25px;
+    border-radius: 0.977vw;
 }
+
+.textPopup{
+
+    border:solid 4px rgb(33, 37, 41);
+    background: rgb(52, 58, 64);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    padding-inline:10px;
+    width:max-content;
+    margin-left:1.7vw;
+
+    opacity:0;
+}
+.textPopup p {
+    color: rgb(173, 181, 189);
+    font-size:1vw;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.item:hover .textPopup{
+    animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.textPopupSubItem p {
+    color: rgb(173, 181, 189);
+    font-size:0.8vw;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.textPopupSubItem{
+    border:solid 4px rgb(33, 37, 41);
+    background: rgb(52, 58, 64);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    margin-top:-2.4vh;
+    padding-inline:10px;
+    width:max-content;
+    margin-left:1.2vw;
+
+    opacity:0;
+}
+.item:hover .textPopupSubItem{
+    animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
 
 
 .item {
     margin-top:1.14vh;
     margin-left:1.05vw;
 
-    width:45%;
+    width:1.38vw;
     height:2.5vh;
 
     background: rgb(73, 80, 87);
@@ -200,8 +265,8 @@ html, body {height: 100%; overflow: hidden}
 
     background: rgb(52, 58, 64);
     border:solid rgb(33, 37, 41);
-    border-width: 2px;
-    border-radius: 10px;
+    border-width: 0.15vw;
+    border-radius: 0.391vw;
     
     transition-duration: 0.5s;
     transition-property: visibility,height;
@@ -214,8 +279,8 @@ html, body {height: 100%; overflow: hidden}
 }
 
 .subItemConfig {
-    margin-top:2px;
-    margin-left:2px;
+    margin-top:0.138vh;
+    margin-left:0.078vw;
 
     height:1.9vh;
     width:1vw;
@@ -263,3 +328,16 @@ html, body {height: 100%; overflow: hidden}
 #VX {
     left:1.5vw;
 }
+
+
+@keyframes slide-in-left {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
