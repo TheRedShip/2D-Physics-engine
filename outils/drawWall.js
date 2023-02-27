@@ -61,6 +61,8 @@ function drawWallSecondClick(oldPos, objects, mousepos, currentObj){
         return currentObj
     }else if(subSelected%3==1){
         return {oldPos:{x:0,y:0}, obj:-1}
+    }else{
+        return {oldPos:{x:0,y:0}, obj:-1}
     }
     
 }
