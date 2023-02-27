@@ -14,6 +14,8 @@ function attractionLoop(c,obj,mousepos,currentBuild){
 
             return currentBuild
         }
+    }else{
+        return currentBuild = {oldPos:{x:0,y:0}, obj:-1}
     }
     // }else if(subSelected%3==2){
     //     if(obj.physics){
