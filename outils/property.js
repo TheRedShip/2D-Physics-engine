@@ -14,6 +14,8 @@ function propertyLoop(obj){
             obj.static = !obj.static
             obj.vx = 0
             obj.vy = 0
+        }else{
+            return currentBuild = {oldPos:{x:0,y:0}, obj:-1}
         }
     }
 }
