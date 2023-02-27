@@ -18,9 +18,6 @@ html, body {height: 100%; overflow: hidden}
     }
 }
 
-
-
-
 #gravity {
     top:8.8vh;
 }
@@ -32,6 +29,14 @@ html, body {height: 100%; overflow: hidden}
 }
 #trajectory {
     top:21.2vh;
+}
+
+
+.item > img {
+    position:absolute;
+    width:1.08vw;
+    margin-left:0.12vw;
+    margin-top:0.22vh;
 }
 
 .switch {
@@ -167,7 +172,9 @@ html, body {height: 100%; overflow: hidden}
 
     left:-0.8vw;
 
+    min-width: 60px;
     width:3vw;
+    min-height:540px;
     height:50vh;
 
     background: rgb(52, 58, 64);
@@ -189,7 +196,9 @@ html, body {height: 100%; overflow: hidden}
     width:max-content;
     margin-left:1.7vw;
 
+    /* display:none; */
     opacity:0;
+
 }
 .textPopup p {
     color: rgb(173, 181, 189);
@@ -200,6 +209,11 @@ html, body {height: 100%; overflow: hidden}
 .item:hover .textPopup{
     animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
+
+.item:not(:hover) .textPopup{
+    transform:translateX(-100%);
+}
+
 
 .textPopupSubItem p {
     color: rgb(173, 181, 189);
@@ -226,12 +240,17 @@ html, body {height: 100%; overflow: hidden}
     animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
+.item:not(:hover) .textPopupSubItem{
+    transform:translateX(-100%);
+}
 
 
 .item {
     margin-top:1.14vh;
     margin-left:1.05vw;
-
+    
+    
+    min-width:27px;
     width:1.38vw;
     height:2.5vh;
 
@@ -260,6 +279,8 @@ html, body {height: 100%; overflow: hidden}
     top:0;
     left:100%;
 
+    min-width:fit-content;
+    min-height: fit-content;
     width:100%;
     height:0%;
 
@@ -282,8 +303,9 @@ html, body {height: 100%; overflow: hidden}
     margin-top:0.138vh;
     margin-left:0.078vw;
 
-    height:1.9vh;
+    height:1.81vh;
     width:1vw;
+
 
     background: rgb(73, 80, 87);
     border:solid rgb(33, 37, 41);
@@ -334,10 +356,12 @@ html, body {height: 100%; overflow: hidden}
     0% {
       transform: translateX(-1000px);
       opacity: 0;
+      /* display:none; */
     }
     100% {
       transform: translateX(0);
       opacity: 1;
+      /* display:block; */
+
     }
 }
-  
