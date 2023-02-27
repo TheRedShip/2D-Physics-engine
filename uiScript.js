@@ -24,8 +24,12 @@ document.body.onkeyup = function(e) {
     ) {
         if (previousDT == 0) {
             previousDT = setDT(0)
+            if(previousDT!= 0 && previousDT != 1) previousDT = 1
+
         } else {
             previousDT = setDT(1)
+            if(previousDT!= 0 && previousDT != 1) previousDT = 0
+
         }
     }
 }
