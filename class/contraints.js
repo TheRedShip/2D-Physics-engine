@@ -5,14 +5,13 @@ class Contraints {
     constructor(obj1,obj2,length){
         this.startObj = obj1
         this.endObj = obj2
-        
-        this.r = 0
-
 
         this.x = this.startObj.x
         this.y = this.startObj.y
         this.x2 = this.endObj.x
         this.y2 = this.endObj.y
+
+        this.r = 0
 
         this.stiffness = contraintConstant.stiffness;
 
@@ -39,6 +38,13 @@ class Contraints {
         // let mouseToClosestMag = Math.sqrt(mouseToClosest.x**2 + mouseToClosest.y**2)
         
         // if(mouseToClosestMag <= 1) return true;
+    }
+    copy(){
+        let newContraint = new Contraints(this.startObj,this.endObj,this.length)
+        return newContraint 
+    }
+    deepCopy() {
+       
     }
     contraintForce(){
         let dist = {x:this.endObj.x-this.startObj.x,y:this.endObj.y-this.startObj.y}
