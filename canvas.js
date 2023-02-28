@@ -47,8 +47,8 @@ let handleMouseclick = (event) => {
     if(event.buttons==1) mouseClick = true
     else mouseClick = false
 };
-document.addEventListener('mousedown', handleMouseclick);
-document.addEventListener('mouseup', handleMouseclick);
+canvas.addEventListener('mousedown', handleMouseclick);
+canvas.addEventListener('mouseup', handleMouseclick);
 
 
 function handleCollision(objects){
@@ -89,6 +89,51 @@ function handleCollision(objects){
     }
 }
 
+
+export function saveState(){
+    state.objects = []
+    let ignoreObjects = []
+    for(let obj of objects){
+        if(!ignoreObjects.includes(obj)){
+            obj.deepCopy(state.objects)
+            
+            if(obj.constructor.name == "Circle"){
+                if(obj.contraint){
+                    let con = obj.contraint
+                    let secObj;
+                    if(con.startObj != obj) secObj = con.startObj
+                    else secObj = con.endObj
+                    
+                    // objects.splice(objects.indexOf(secObj))
+                    ignoreObjects.push(secObj)
+                }
+            }
+        }
+    }
+}
+
+export function restoreState(){
+    objects = []
+    let ignoreObjects = []
+    for(let obj of state.objects){
+        if(!ignoreObjects.includes(obj)){
+            obj.deepCopy(objects)
+            if(obj.constructor.name == "Circle"){
+                if(obj.contraint){
+                    let con = obj.contraint
+                    let secObj;
+                    if(con.startObj != obj) secObj = con.startObj
+                    else secObj = con.endObj
+                    
+                    // state.objects.splice(state.objects.indexOf(secObj))
+                    ignoreObjects.push(secObj)
+                }
+            }
+        }
+    }
+}
+
+let state = {objects:[],camera:[]}
 let objects = []
 let particles = []
 
@@ -110,14 +155,16 @@ function animate(){
     for(let o = 0; o < objects.length; o++){
         objects[o].update(c, canvas.height)
     }
+            
+    if(!currentBuild) currentBuild = {oldPos:{x:0,y:0}, obj:-1}
 
     if(currentBuild.oldPos.x==0) currentBuild.obj = getClickedObj(mousepos,objects)
     if(currentBuild.obj!=-1) currentBuild.obj.drawSelect(c)
 
     if (mouseClick){
         mouseClick = false
-
-        if((mousepos.realx > window.innerWidth/30) && selected != -1){
+        
+        if(selected != -1){
 
             for(let i = 0; i < 50; i ++){
                 particles.push(new Particle(mousepos.x,mousepos.y,10*(Math.random()-0.5),10*(Math.random()-0.5),0,particleConstant.dampening,particleConstant.size,particleConstant.lifetime,particleConstant.color,true))
@@ -126,7 +173,6 @@ function animate(){
             if(currentBuild.oldPos.x==0){
                 currentBuild.oldPos.x = mousepos.x
                 currentBuild.oldPos.y = mousepos.y
-
                 drawWall.wallReset(objects)
 
             }else{
