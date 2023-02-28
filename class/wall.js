@@ -54,6 +54,7 @@ class Wall {
         newWall.canAttach = this.canAttach
 
         objects.push(newWall)
+        
     }
     
     distFunc(mousepos){
