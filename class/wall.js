@@ -8,10 +8,9 @@ class Wall {
         this.y = y
         this.x2 = x2
         this.y2 = y2
-        
+
         this.r = 0
 
-        
         this.attachedTo = null;
         this.attachedBy = null;
 
@@ -46,6 +45,15 @@ class Wall {
         this.y2 = this.y+distBetween.y
 
         if(this.attachedTo) this.attachedTo.moveAttachedTo({x:this.x2,y:this.y2})
+    }
+
+    deepCopy(objects){
+        let newWall = new Wall(this.x,this.y,this.x2,this.y2)
+        newWall.attachedTo = this.attachedTo
+        newWall.attachedBy = this.attachedBy
+        newWall.canAttach = this.canAttach
+
+        objects.push(newWall)
     }
     
     distFunc(mousepos){
