@@ -1,7 +1,10 @@
 import { setDT } from "./constant.js"
-
+import { saveState,restoreState } from "./canvas.js"
 let itemList = document.getElementsByClassName("item")
 let subItemList = document.getElementsByClassName("subItemConfig")
+
+let saveStateButton = document.getElementById("saveState")
+let restoreStateButton = document.getElementById("restoreState")
 
 let selected = -1
 let subSelected = -1
@@ -25,11 +28,9 @@ document.body.onkeyup = function(e) {
         if (previousDT == 0) {
             previousDT = setDT(0)
             if(previousDT!= 0 && previousDT != 1) previousDT = 1
-
         } else {
             previousDT = setDT(1)
             if(previousDT!= 0 && previousDT != 1) previousDT = 0
-
         }
     }
 }
@@ -88,6 +89,14 @@ trajectorySwitch.onclick = function() {
     }
     return true;
 }
+
+saveStateButton.onclick = function(){
+    saveState()
+}
+restoreStateButton.onclick = function(){
+    restoreState()
+}
+
 
 function toggleTab(obj){
     currentObj = obj
