@@ -207,7 +207,7 @@ html, body {height: 100%; overflow: hidden}
 }
 
 .item:hover .textPopup{
-    animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
 }
 
 .item:not(:hover) .textPopup{
@@ -237,7 +237,7 @@ html, body {height: 100%; overflow: hidden}
     opacity:0;
 }
 .item:hover .textPopupSubItem{
-    animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: slide-in-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
 }
 
 .item:not(:hover) .textPopupSubItem{
@@ -257,8 +257,8 @@ html, body {height: 100%; overflow: hidden}
     background: rgb(73, 80, 87);
     border:solid rgb(33, 37, 41);
     border-radius: 100%;
-
-    transition: all 0.3s ease;
+    transition-property: border,transform;
+    transition: 0.3s ease;
 }
 
 .selected {
@@ -352,6 +352,48 @@ html, body {height: 100%; overflow: hidden}
 }
 
 
+#state {
+    position:absolute;
+    display: flex; /* Use flexbox */
+    flex-direction: row; /* Arrange child divs horizontally */
+    justify-content: center; /* Center child divs horizontally */
+    align-items: center;
+
+    left:-0.8vw;
+    bottom:-0.8vh;
+
+    min-width: 60px;
+    width:7vw;
+    height:5vh;
+
+    background: rgb(52, 58, 64);
+    border:solid rgb(33, 37, 41);
+    border-radius: 0.977vw;
+}
+
+.button {
+    margin: 10px;
+    margin-top:0px;
+    
+    min-width:27px;
+    width:1.38vw;
+    height:2.5vh;
+
+    background: rgb(73, 80, 87);
+    border:solid rgb(33, 37, 41);
+    border-radius: 20%;
+    transition-property: border,transform;
+    transition: 0.3s ease;
+}
+.button:hover {
+    transform:scale(1.2);
+    border:solid rgb(173, 181, 189) !important;
+}
+.button:not(:hover){
+    transform:scale(1);
+    border:solid rgb(33, 37, 41) !important;
+}
+
 @keyframes slide-in-left {
     0% {
       transform: translateX(-1000px);
@@ -365,3 +407,4 @@ html, body {height: 100%; overflow: hidden}
 
     }
 }
+  
