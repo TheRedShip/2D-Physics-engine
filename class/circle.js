@@ -1,5 +1,6 @@
 import { drawCircle, drawSimpleCircle, drawLines } from "../utils.js"
 import { DT, G, Colors, ballConstant } from "../constant.js"
+import { Contraints } from "./contraints.js"
 
 class Circle {
     constructor(r, x, y, vx, vy, m = 1) {
@@ -42,8 +43,36 @@ class Circle {
         this.attraction = obj.attraction
         this.trajectory = obj.trajectory
     }
-    
-    checkBorder(c, screeny ) {
+    deepCopy(objects){
+        let newCircle = new Circle(this.r,this.x,this.y,this.vx,this.vy,this.m)
+        newCircle.copy(this)
+
+        if(this.contraint){
+            let con = this.contraint
+            let secObj;
+            if(con.startObj != this) secObj = con.startObj
+            else secObj = con.endObj
+
+            console.log(con,secObj)
+
+
+            let secCircle = new Circle(secObj.r,secObj.x,secObj.y,secObj.vx,secObj.vy,secObj.m)
+            secCircle.copy(secObj)
+
+            let newContraints = new Contraints(newCircle,secCircle,con.length)
+        
+            newCircle.contraint = newContraints
+            secCircle.contraint = newContraints
+
+            objects.push(secCircle)
+            objects.push(newContraints)
+
+        }
+
+        objects.push(newCircle)
+
+    }
+    checkBorder(c, screeny) {
         // if (this.x + this.vx - this.r <= 0 || this.x + this.vx + this.r >= screenx) {
         //     if (this.x + this.vx + this.r >= screenx) this.x = screenx - this.r;
         //     if (this.x + this.vx - this.r <= 0) this.x = 0 + this.r;
@@ -53,10 +82,10 @@ class Circle {
         //     if (this.contraint) this.vx *= 0.60
         //     if (this.friction) this.vx *= ballConstant.collisionFriction
         // }
-        if( this.gravity != 0 ){
+
+        if(this.gravity != 0){
             const originalPointBorder = new DOMPoint(0,screeny);
             let screenBorderPos = c.getTransform().invertSelf().transformPoint(originalPointBorder)
-            
     
             if (this.y + this.vy + this.r >= screenBorderPos.y) {
                 this.y = screenBorderPos.y - this.r;
@@ -73,7 +102,6 @@ class Circle {
         let fMag = Math.sqrt(f.x ** 2 + f.y ** 2)
 
         let newMag = (G * this.m * other.m) / (r * r)
-        console.log(newMag)
         let new_f = { x: f.x * (newMag / fMag), y: f.y * (newMag / fMag) }
         return { x: new_f.x / other.m, y: new_f.y / other.m }
     }
