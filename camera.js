@@ -1,7 +1,7 @@
 let canvas = document.querySelector("canvas")
 let c = canvas.getContext("2d")
 
-let currentZoom = 1;
+export let currentZoom = 1;
 let isDragging = false;
 let dragStartPosition = { x: 0, y: 0 };
 export let currentTransformedCursor;
