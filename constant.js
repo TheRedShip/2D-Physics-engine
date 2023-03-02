@@ -8,13 +8,12 @@ export function setDT(newDT) {
     return prevDT
 }
 
-
 //select nums
 export const SelectNums = {controlSelect:0,propertySelect:1,attractionSelect:2,moveSelect:3,vectorSelect:4,copySelect:5,drawCircleSelect:6,drawWallSelect:7,drawContraintsSelect:8, chronoSelect:9,trashSelect:10}
 
 
 //color
-const backGroundColor = "rgba(116, 179, 206, 0.4)"
+const backGroundColor = "rgba(116, 179, 206, 1)"
 const selectedColor = "rgb(255,255,255)"
 
 const circleColor = "23,42,58"
@@ -22,9 +21,11 @@ const trajectoryColor = "41, 110, 180"
 const staticColor = "rgb(220, 73, 58)"
 
 const contraintColor = "rgb(12, 24, 33)"
+const measureColor = "rgb(41, 110, 180)"
+
 
 export const Colors = {bgColor:backGroundColor,circleColor:circleColor,trajecColor:trajectoryColor, staticColor:staticColor,selectedColor:selectedColor,
-                        contraintColor:contraintColor} 
+                        contraintColor:contraintColor,measure:measureColor} 
 
 
 //ball constant
