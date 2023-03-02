@@ -110,6 +110,10 @@ export function saveState(){
             }
         }
     }
+
+    state.camera = []
+    
+
 }
 
 export function restoreState(){
@@ -146,6 +150,7 @@ function animate(){
     c.fillRect(-window.innerWidth*2,-window.innerHeight*2,window.innerWidth*4, window.innerHeight*4)
     c.restore();
 
+    
     for(let o = 0; o < particles.length; o++){
         particles[o].update(c)
         if(particles[o].lifetime<=0){
@@ -155,7 +160,7 @@ function animate(){
     for(let o = 0; o < objects.length; o++){
         objects[o].update(c, canvas.height)
     }
-            
+
     if(!currentBuild) currentBuild = {oldPos:{x:0,y:0}, obj:-1}
 
     if(currentBuild.oldPos.x==0) currentBuild.obj = getClickedObj(mousepos,objects)
@@ -179,6 +184,9 @@ function animate(){
                 let obj = currentBuild.obj
                 let oldPos = currentBuild.oldPos
 
+                if(selected == SelectNums.controlSelect){
+                    currentBuild = control.controlSecondClick()
+                }
                 if(selected == SelectNums.attractionSelect && obj != 1){
                     attraction.attractionSecondClick(obj,objects,mousepos)
                     currentBuild = {oldPos:{x:0,y:0}, obj:-1}
@@ -207,9 +215,8 @@ function animate(){
         let oldPos = currentBuild.oldPos
         let obj = currentBuild.obj
 
-        if(selected == SelectNums.controlSelect && obj!=-1){
-            control.controlLoop(obj)
-            currentBuild = {oldPos:{x:0,y:0}, obj:-1}
+        if(selected == SelectNums.controlSelect){
+            currentBuild = control.controlLoop(c,obj,mousepos,currentBuild)
         }
         else if(selected == SelectNums.propertySelect && obj!=-1){
             property.propertyLoop(obj)
@@ -238,11 +245,10 @@ function animate(){
         }else {
             currentBuild = {oldPos:{x:0,y:0}, obj:-1}
         }
-
-        
     }
 
     handleCollision(objects)
+    
     requestAnimationFrame(animate);
 
 }
