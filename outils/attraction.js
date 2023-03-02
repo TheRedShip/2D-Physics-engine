@@ -1,5 +1,5 @@
 import { subSelected } from "../uiScript.js"
-import { dist, drawLines, drawSimpleCircleEmpty, drawSimpleElipseEmpty, getClickedObj} from "../utils.js"
+import { dist, drawSimpleCircleEmpty, getClickedObj} from "../utils.js"
 import { G } from "../constant.js"
 
 function attractionLoop(c,obj,mousepos,currentBuild){
