@@ -1,5 +1,3 @@
-import { Particle } from "./class/particle.js"
-
 function drawLines(c,x,y, x2, y2,color="rgb(0,0,0)",thick=5,dashed=[]){
     c.strokeStyle = color
     c.lineWidth = thick
@@ -21,9 +19,14 @@ function drawCircle(c, x,y,r, m,color, alpha=100){
     drawSimpleCircle(c,x,y,r,`rgba(${color},${alpha})`)
     
     let text = Math.round(m).toString()
+    drawText(c,x,y,r/2,text)
+
+}
+
+function drawText(c,x,y,size,text){
     c.beginPath();
-    c.font = `${r/2}px 'Trebuchet MS', sans-serif`;
-    c.fillStyle = `rgb(80, 137, 145, ${alpha})`;
+    c.font = `${size}px 'Trebuchet MS', sans-serif`;
+    c.fillStyle = "rgb(80, 137, 145)"
     c.fillText(text, x-c.measureText(text).width/2, y-c.measureText(text).width/2);
 }
 
@@ -88,4 +91,4 @@ function cwClosestPoint(ball,wall){
 }
 
 
-export { drawLines,dist,drawCircle,drawSimpleCircle,drawSimpleCircleEmpty,drawSimpleElipseEmpty,getClickedObj,cwClosestPoint}
+export { drawText, drawLines,dist,drawCircle,drawSimpleCircle,drawSimpleCircleEmpty,drawSimpleElipseEmpty,getClickedObj,cwClosestPoint}
