@@ -15,7 +15,7 @@ function propertyLoop(obj){
             obj.vx = 0
             obj.vy = 0
         }else{
-            return currentBuild = {oldPos:{x:0,y:0}, obj:-1}
+            return {oldPos:{x:0,y:0}, obj:-1}
         }
     }
 }
