@@ -5,11 +5,11 @@ import { currentZoom } from "../camera.js"
 
 
 function controlLoop(c,obj,mousepos,currentBuild){
-    if(subSelected==0){ 
+    if(subSelected%3==0){ 
         if(obj != -1 && obj.physics) toggleTab(obj) 
         return {oldPos:{x:0,y:0}, obj:-1}
     }
-    else if(subSelected==1){
+    else if(subSelected%3==1){
         let oldPos = currentBuild.oldPos
 
 
@@ -29,7 +29,7 @@ function controlLoop(c,obj,mousepos,currentBuild){
 }
 
 function controlSecondClick(){
-    if(subSelected==1){
+    if(subSelected%3==1){
         return {oldPos:{x:0,y:0}, obj:-1}
     }
 }
